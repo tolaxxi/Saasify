@@ -30,6 +30,4 @@
   border-radius: 15px;
   width: 160px;
 }
-.menu-item {
-  @apply active:text-primary w-[80%] rounded px-4 py-2 hover:bg-gray-200 active:bg-gray-500;
-}
+

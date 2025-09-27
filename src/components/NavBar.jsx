@@ -26,10 +26,10 @@ const NavBar = () => {
       <nav
         className={`${
           isOpen ? 'flex' : 'hidden'
-        } transparent-background absolute top-[100%] right-0 left-0 flex-col p-5 md:relative md:top-auto md:flex md:flex-row md:items-center md:bg-transparent md:p-0 h-50 md:h-auto justify-around`}
+        } transparent-background absolute top-[100%] right-0 left-0 h-50 flex-col justify-around p-5 md:relative md:top-auto md:flex md:h-auto md:flex-row md:items-center md:bg-transparent md:p-0`}
       >
-        <ul className="mb-2 flex flex-col h-[80%] justify-between md:mb-0 md:flex-row">
-          <li className='menu-items'>Home</li>
+        <ul className="mb-2 flex h-[80%] flex-col justify-between md:mb-0 md:flex-row">
+          <li>Home</li>
           <li>About</li>
           <li>Service</li>
           <li>Contact</li>
