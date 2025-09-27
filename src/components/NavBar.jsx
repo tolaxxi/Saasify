@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AiOutlineThunderbolt } from 'react-icons/ai';
+import { IoMdClose } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 const NavBar = () => {
@@ -9,28 +10,34 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   }
   return (
-    <header className="flex justify-between min-w-full items-center py-3 px-5 md:px-15 shadow-sm sticky top-0">
-      <span className="flex items-center text-primary-text">
-        <button className="bg-primary mr-2 px-1.5 text-white hover:animate-spin font-semibold py-1.5 text-lg rounded-xl">
+    <header className="transparent-background sticky top-0 flex min-w-full items-center justify-between px-5 py-3 shadow-md md:px-15">
+      <span className="text-primary-text flex items-center">
+        <button className="bg-primary mr-2 rounded-xl px-1.5 py-1.5 text-lg font-semibold text-white hover:animate-spin">
           <AiOutlineThunderbolt />
         </button>
-        <h2 className="font-semibold text-lg">saaSify</h2>
+        <h2 className="text-lg font-semibold">saaSify</h2>
       </span>
 
       {/* mobile menu toggle */}
       <button className="md:hidden" onClick={navToggle}>
-        <RxHamburgerMenu size={25} />
+        {isOpen ? <IoMdClose size={25} /> : <RxHamburgerMenu size={25} />}
       </button>
 
-      <nav className={`${isOpen ? 'navOpen transparent-background' : 'hidden'} items-center md:flex`}>
-        <ul className="flex  ">
-          <li>Home</li>
+      <nav
+        className={`${
+          isOpen ? 'flex' : 'hidden'
+        } transparent-background absolute top-[100%] right-0 left-0 flex-col p-5 md:relative md:top-auto md:flex md:flex-row md:items-center md:bg-transparent md:p-0 h-50 md:h-auto justify-around`}
+      >
+        <ul className="mb-2 flex flex-col h-[80%] justify-between md:mb-0 md:flex-row">
+          <li className='menu-items'>Home</li>
           <li>About</li>
           <li>Service</li>
           <li>Contact</li>
         </ul>
 
-        <button className="bg-primary px-5 py-2 rounded-xl text-white text-nowrap">Sign Up</button>
+        <button className="bg-primary rounded-xl px-5 py-2 text-nowrap text-white">
+          Sign Up
+        </button>
       </nav>
     </header>
   );

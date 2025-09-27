@@ -21,22 +21,15 @@
     255,
     255,
     255,
-    0.5
+    0.95
   ); /* Semi-transparent white background */
   backdrop-filter: blur(1.5px); /* Apply the blur effect */
-}
-.navOpen {
-  position: absolute;
-  top: 105%;
-  display: flex;
-  flex-direction: column;
-}
-.navOpen ul {
-  display: flex;
-  flex-direction: column;
 }
 .cta-btn {
   padding: 12px 20px;
   border-radius: 15px;
   width: 160px;
+}
+.menu-item {
+  @apply active:text-primary w-[80%] rounded px-4 py-2 hover:bg-gray-200 active:bg-gray-500;
 }
