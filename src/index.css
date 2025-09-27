@@ -17,7 +17,12 @@
   }
 }
 .transparent-background {
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Semi-transparent white background */
   backdrop-filter: blur(1.5px); /* Apply the blur effect */
 }
 .navOpen {
@@ -31,7 +36,7 @@
   flex-direction: column;
 }
 .cta-btn {
-  padding: 16px 20px;
-  border-radius: 18px;
+  padding: 12px 20px;
+  border-radius: 15px;
   width: 160px;
 }

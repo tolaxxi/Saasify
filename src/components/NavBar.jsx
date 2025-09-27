@@ -18,11 +18,11 @@ const NavBar = () => {
       </span>
 
       {/* mobile menu toggle */}
-      <button className="sm:hidden" onClick={navToggle}>
+      <button className="md:hidden" onClick={navToggle}>
         <RxHamburgerMenu size={25} />
       </button>
 
-      <nav className={`${isOpen ? 'navOpen transparent-background' : 'hidden'} items-center sm:flex`}>
+      <nav className={`${isOpen ? 'navOpen transparent-background' : 'hidden'} items-center md:flex`}>
         <ul className="flex  ">
           <li>Home</li>
           <li>About</li>
