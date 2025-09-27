@@ -1,6 +1,12 @@
+import NavBar from './components/NavBar.jsx';
+import Hero from './Pages/Hero.jsx';
+
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
-export default App
+    <div>
+      <NavBar />
+      <Hero />
+    </div>
+  );
+};
+export default App;
