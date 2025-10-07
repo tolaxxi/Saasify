@@ -19,7 +19,11 @@ const NavBar = () => {
     }
 
     document.addEventListener('mousedown', handleClickOutside);
-  });
+
+    // clean up function
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <header className="transparent-background sticky top-0 flex min-w-full items-center justify-between px-5 py-3 shadow-md md:px-15">
       <span className="text-primary-text flex items-center">
