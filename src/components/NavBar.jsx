@@ -1,14 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AiOutlineThunderbolt } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   function navToggle() {
     setIsOpen(!isOpen);
   }
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+  });
   return (
     <header className="transparent-background sticky top-0 flex min-w-full items-center justify-between px-5 py-3 shadow-md md:px-15">
       <span className="text-primary-text flex items-center">
@@ -24,6 +35,7 @@ const NavBar = () => {
       </button>
 
       <nav
+        ref={menuRef}
         className={`${
           isOpen ? 'flex' : 'hidden'
         } transparent-background absolute top-[100%] right-0 left-0 h-50 flex-col justify-around p-5 md:relative md:top-auto md:flex md:h-auto md:flex-row md:items-center md:bg-transparent md:p-0`}
